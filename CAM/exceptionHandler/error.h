@@ -18,9 +18,9 @@ protected:
 	errorTypes code;
 
 public:
-	Error(std::string& msg, errorTypes code = errorTypes::DEFAULT);
+	Error(std::string msg, errorTypes code = errorTypes::DEFAULT);
 	const errorMessage& errorMsg();
-
+	void printErrorMsg();
 	// decide whether to consider http code 1XX as an error
 	static bool httpInformational;
 
