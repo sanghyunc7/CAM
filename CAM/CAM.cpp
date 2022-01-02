@@ -10,7 +10,10 @@ std::ofstream writeCsv("links.csv");
 
 std::string extract_html_page()
 {
-	cpr::Url url = cpr::Url{ "https://en.wikipedia.org/wiki/Poppy_seed_defence" };
+	cpr::Url url = cpr::Url{
+		//"https://en.wikipedia.org/wiki/Poppy_seed_defence" 
+	"https://www.canuckaudiomart.com/classifieds/19-headphones/"
+	};
 	cpr::Response response = cpr::Get(url);
 
 	if (Error::httpCheck(response.status_code, response.error)) {
@@ -26,15 +29,18 @@ std::string extract_html_page()
 
 void search_for_title(GumboNode* node)
 {
-	if (node->type != GUMBO_NODE_ELEMENT)
-		return;
+	if (node->type != GUMBO_NODE_ELEMENT) return;
 
 	if (node->v.element.tag == GUMBO_TAG_H1)
 	{
 		GumboNode* title_text = static_cast<GumboNode*>(node->v.element.children.data[0]);
 		//const char* name = gumbo_normalized_tagname(GUMBO_TAG_H1);
 		//std::cout << name << "\n";
-		std::cout << title_text->v.text.text << "\n";
+		if (title_text->type == GUMBO_NODE_TEXT)
+		{
+			std::cout << title_text->v.text.text << "\n";
+		}
+		else throw Error("title node is of wrong type");
 		return;
 	}
 
@@ -43,6 +49,13 @@ void search_for_title(GumboNode* node)
 		search_for_title(static_cast<GumboNode*>(children->data[i]));
 }
 
+void search_for_product_links(GumboNode* node)
+{
+	if (node->type != GumboNodeType::GUMBO_NODE_ELEMENT) return;
+
+	//if (node->v.)
+
+}
 
 void search_for_links(GumboNode* node)
 {
@@ -77,7 +90,7 @@ int main()
 		std::string page_content = extract_html_page();
 		GumboOutput* parsed_response = gumbo_parse(page_content.c_str());
 		search_for_title(parsed_response->root);
-		
+
 		writeCsv << "type,link" << "\n";
 		search_for_links(parsed_response->root);
 		writeCsv.close();
