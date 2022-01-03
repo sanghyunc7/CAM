@@ -49,11 +49,31 @@ void search_for_title(GumboNode* node)
 		search_for_title(static_cast<GumboNode*>(children->data[i]));
 }
 
+
+void filter_tablerows(GumboNode* trow)
+{
+	if (trow->type != GUMBO_NODE_ELEMENT) return;
+
+	
+}
+
 void search_for_product_links(GumboNode* node)
 {
 	if (node->type != GumboNodeType::GUMBO_NODE_ELEMENT) return;
 
-	//if (node->v.)
+	if (node->v.element.tag == GUMBO_TAG_TBODY)
+	{
+		//revise: do some extra checking to exclude ads outside of CANADA
+		
+
+		GumboVector* children = &node->v.element.children;
+		for (unsigned int i = 0; i < children->length; i++) {
+			filter_tablerows(static_cast<GumboNode*>(children->data[i]));
+		}
+		
+
+
+	}
 
 }
 
