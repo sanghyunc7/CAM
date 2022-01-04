@@ -24,6 +24,12 @@
     <ClCompile Include="exceptionHandler\error.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="headphones.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="listing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="exceptionHandler\error.h">
@@ -31,6 +37,15 @@
     </ClInclude>
     <ClInclude Include="exceptionHandler\errorTypes.h">
       <Filter>Header Files\exceptionHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="headphones.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="listing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="product.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

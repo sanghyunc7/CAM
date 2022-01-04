@@ -5,6 +5,17 @@
 #include "cpr/cpr.h"
 #include "gumbo.h"
 
+#include <chrono>
+
+void hello() {
+	std::chrono::day d1;
+
+}
+
+consteval int get_value() {
+	return 3;
+}
+
 std::ofstream writeCsv("links.csv");
 
 
@@ -126,3 +137,6 @@ int main()
 	}
 
 }
+
+
+

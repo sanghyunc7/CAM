@@ -1,10 +1,19 @@
 #pragma once
+#include <string>
 
 #include "product.h"
-#include <string>
+#include "listing.h"
+
+
 
 
 class Headphones: public Product {
+	std::string company;
 public:
-	std::string getType() override;
+	int price = 0;
+
+	ProductType getType() override;
+	Headphones(std::string name, int price, std::string company);
+	Headphones(std::string name, int price);
+	Headphones(std::string name);
 };

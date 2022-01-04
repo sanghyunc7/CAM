@@ -2,16 +2,22 @@
 
 #include "product.h"
 #include <chrono>
+#include <memory>
 
 typedef enum {
 	SALE, 
 	WANTED,
-	TRADE
+	TRADE,
+	SERVICE
 } ListingType;
 
 class Listing {
-	Product product;
+	std::shared_ptr<Product> product;
+	ListingType listingType;
+	std::string link;
+
+	
 public:
-	Listing(ListingType listingType, std::string name, std::string link, 
-		int price, std::chrono::year_month)
+	Listing(ListingType listingType, std::string name, std::string link, std::chrono::year_month_day);
+
 };
