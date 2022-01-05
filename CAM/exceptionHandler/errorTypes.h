@@ -5,5 +5,5 @@ enum class errorTypes {
 	DEBUG, //intentionally throw one for debugging purposes
 	HTTP,
 	FATAL,
-
+	MISSING_ENUM,
 };

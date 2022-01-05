@@ -30,6 +30,9 @@
     <ClCompile Include="listing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="product.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="exceptionHandler\error.h">

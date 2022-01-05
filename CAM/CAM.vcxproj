@@ -147,6 +147,7 @@
     <ClCompile Include="exceptionHandler\error.cpp" />
     <ClCompile Include="headphones.cpp" />
     <ClCompile Include="listing.cpp" />
+    <ClCompile Include="product.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="exceptionHandler\error.h" />

@@ -4,7 +4,7 @@
 #include <chrono>
 #include <memory>
 
-typedef enum {
+typedef enum class ListingType{
 	SALE, 
 	WANTED,
 	TRADE,
@@ -15,9 +15,10 @@ class Listing {
 	std::shared_ptr<Product> product;
 	ListingType listingType;
 	std::string link;
-
+	std::chrono::year_month_day ymd;
 	
 public:
-	Listing(ListingType listingType, std::string name, std::string link, std::chrono::year_month_day);
+	Listing(ListingType listingType, ProductType productType, std::string name, 
+		std::string link, std::chrono::year_month_day ymd);
 
 };

@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-typedef enum {
+typedef enum class ProductType{
 	HEADPHONES,
 	HEADPHONE_AMPLIFIER,
 	DACS,
@@ -14,5 +14,5 @@ public:
 	std::string name;
 	Product(std::string name);
 	virtual ProductType getType() = 0;
-	virtual ~Product() = 0;
+	virtual ~Product() = default;
 };
