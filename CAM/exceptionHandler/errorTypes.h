@@ -6,4 +6,5 @@ enum class errorTypes {
 	HTTP,
 	FATAL,
 	MISSING_ENUM,
+	UNEXPECTED_TYPE,
 };

@@ -147,6 +147,7 @@
     <ClCompile Include="exceptionHandler\error.cpp" />
     <ClCompile Include="headphones.cpp" />
     <ClCompile Include="listing.cpp" />
+    <ClCompile Include="nodeFinder.cpp" />
     <ClCompile Include="product.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +155,7 @@
     <ClInclude Include="exceptionHandler\errorTypes.h" />
     <ClInclude Include="headphones.h" />
     <ClInclude Include="listing.h" />
+    <ClInclude Include="nodeFinder.h" />
     <ClInclude Include="product.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
